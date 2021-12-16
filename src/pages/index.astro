@@ -1,0 +1,51 @@
+---
+import images from '../data/images.json';
+
+let title = 'My Astro Site';
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{title}</title>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
+    <link rel="stylesheet" href={Astro.resolve('../styles/home.css')}>
+
+    <style>
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            max-width: min(100%, 68ch);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <div>
+                <h1>My Images</h1>
+            </div>
+        </header>
+        <ul class="images">
+            {images.map(image => {
+                return (
+                    <li key={image.id}>
+                        <a href={image.link} rel="noreferrer">
+                            <div class="imageImage">
+                                <img width={image.width} height={image.height} src={image.image} alt="" />
+                            </div>
+                            <h3 class="imageTitle">
+                                { image.title }
+                            </h3>
+                        </a>
+                    </li>
+                )
+            })}
+        </ul>
+    </main>
+</body>
+</html>
