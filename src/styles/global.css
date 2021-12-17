@@ -11,10 +11,11 @@
 }
 
 body {
-  padding: 4rem 2rem;
+  padding: 0;
   width: 100%;
   min-height: 100vh;
   display: grid;
+  grid-template-rows: auto 1fr;
   justify-content: center;
   background: #f9fafb;
   color: #111827;

@@ -13,39 +13,32 @@ let title = 'My Astro Site';
 
     <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
     <link rel="stylesheet" href={Astro.resolve('../styles/home.css')}>
-
-    <style>
-        header {
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-            max-width: min(100%, 68ch);
-        }
-    </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>My Images</h1>
+        </div>
+    </header>
     <main>
-        <header>
-            <div>
-                <h1>My Images</h1>
-            </div>
-        </header>
-        <ul class="images">
-            {images.map(image => {
-                return (
-                    <li key={image.id}>
-                        <a href={image.link} rel="noreferrer">
-                            <div class="imageImage">
-                                <img width={image.width} height={image.height} src={image.image} alt="" />
-                            </div>
-                            <h3 class="imageTitle">
-                                { image.title }
-                            </h3>
-                        </a>
-                    </li>
-                )
-            })}
-        </ul>
+        <div class="container">
+            <ul class="images">
+                {images.map(image => {
+                    return (
+                        <li key={image.id}>
+                            <a href={image.link} rel="noreferrer">
+                                <div class="imageImage">
+                                    <img width={image.width} height={image.height} src={image.image} alt="" />
+                                </div>
+                                <h3 class="imageTitle">
+                                    { image.title }
+                                </h3>
+                            </a>
+                        </li>
+                    )
+                })}
+            </ul>
+        </div>
     </main>
 </body>
 </html>

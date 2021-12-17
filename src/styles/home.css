@@ -14,8 +14,17 @@ a {
   color: inherit;
 }
 
-header > div {
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: min(100%, 68ch);
+}
+
+header {
   font-size: clamp(2rem, -0.4742rem + 6.1856vw, 2.75rem);
+  padding: 1em 0;
+  margin-bottom: .5em;
 }
 
 header > div {
@@ -27,6 +36,7 @@ header > div {
 header h1 {
   font-size: 1em;
   font-weight: 500;
+  margin: 0;
 }
 header img {
   width: 2em;
@@ -36,6 +46,13 @@ header img {
 h2 {
   font-weight: 500;
   font-size: clamp(1.5rem, 1rem + 1.25vw, 2rem);
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 1em;
+  margin: 0 auto;
 }
 
 .images {
